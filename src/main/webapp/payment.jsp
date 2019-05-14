@@ -4,31 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Point Of Sales | Dashboard</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="bower_components/morris.js/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -40,77 +15,16 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-    <header class="main-header">
-        <!-- Logo -->
-        <a href="index2.html" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>P</b>OS</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Point Of Sales</b>POS</span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
-
-            <!--div tag in side bar-->
-        </nav>
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
-            <!-- sidebar menu: : style can be found in sidebar.less -->
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <li >
-                    <a href="index.html">
-                        <i class="fa fa-fw fa-dashboard"></i> <span> Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="customer.html">
-                        <i class="fa fa-fw fa-user"></i>  <span> New Customer</span>
-
-                    </a>
-                </li>
-                <li class="active treeview">
-                    <a href="items.html">
-                        <i class="fa fa-fw fa-list-alt"></i> <span> New Item</span>
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="orders.html">
-                        <i class="fa fa-fw fa-file-text-o"></i>
-                        <span> New Orders</span>
-                    </a>
-                </li>
-                <li >
-                    <a href="ordersDetaial.html">
-                        <i class="fa fa-fw fa-file-o"></i>
-                        <span>Order Details</span>
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </aside>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" >
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                New Item
-                <small>Control panel</small>
+                Payment
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">New Item</li>
+                <li class="active">Payment</li>
             </ol>
         </section>
 
@@ -122,30 +36,28 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Item</h3>
+                            <h3 class="box-title">Add Payment</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form role="form">
                             <div class="box-body">
-                                <div class="box-header">
-                                    <button type="button" class="btn btn-primary">New Item</button>
-                                </div>
+
                                 <div class="form-group">
-                                    <label >Item Code</label>
-                                    <input type="text" class="form-control" id="textItemCord" placeholder="Enter Item Code">
+                                    <label >Payment ID</label>
+                                    <input type="text" class="form-control" id="textPaymentID" placeholder="Enter Payment ID">
                                 </div>
                                 <div class="form-group">
                                     <label >Description</label>
-                                    <input type="text" class="form-control" id="textItemName" placeholder="Enter Description">
+                                    <input type="text" class="form-control" id="textDescription" placeholder="Enter Description">
                                 </div>
                                 <div class="form-group">
                                     <label >Unit Price</label>
-                                    <input type="text" class="form-control" id="textItemPrice" placeholder="Enter Unit Price">
+                                    <input type="text" class="form-control" id="textPrice" placeholder="Enter Unit Price">
                                 </div>
                                 <div class="form-group">
                                     <label>Quantity</label>
-                                    <input type="text" class="form-control" id="textItemQty" placeholder="Enter Quantity">
+                                    <input type="text" class="form-control" id="textQty" placeholder="Enter Quantity">
                                 </div>
 
                             </div>
@@ -162,14 +74,14 @@
                 <div class="col-md-8">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Item Information</h3>
+                            <h3 class="box-title">Payment Information</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table id="tblItems" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>Item Code</th>
+                                    <th>Payment ID</th>
                                     <th>Description</th>
                                     <th>Unit Price</th>
                                     <th>Quantity</th>
@@ -181,7 +93,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>Item Code</th>
+                                    <th>Payment ID</th>
                                     <th>Description</th>
                                     <th>Unit Price</th>
                                     <th>Quantity</th>
@@ -200,52 +112,45 @@
 
     <footer class="main-footer">
         <!-- Default to the left -->
-        <p style="text-align: center"><strong>Copyright &copy; DEP 2019</strong> | dilrukshi.rajapakshe@gmial.com</p>
+        <p style="text-align: center"><strong>Copyright &copy; PAF </strong> | Group 406-G8</p>
     </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button);
-</script>
+<script src="js/jquery-3.4.1.min.js"></script>
+
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap bundle -->
+<script src="js/bootstrap.bundle.js"></script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
 <!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="js/bootstrap.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- DataTables -->
-<script src="dist/js/jquery.dataTables.min.js"></script>
-<script src="dist/js/dataTables.bootstrap.min.js"></script>
+<script src="js/adminlte.min.js"></script>
+
 <script>
-    var SERVER_URL = "http://localhost:3000";
+    var SERVER_URL = "http://localhost:8080";
 
     $("#btnSave").click(function(){
 
         if ($("#textItemCord").attr("disabled")){
 
-            var item = {
-                code: $("#textItemCord").val(),
-                description: $("#textItemName").val(),
-                unitPrice: $("#textItemPrice").val(),
-                qtyOnHand: $("#textItemQty").val()
+            var payment = {
+                id: $("#textPaymentID").val(),
+                description: $("#textDescription").val(),
+                unitPrice: $("#textPrice").val(),
+                qtyOnHand: $("#textQty").val()
             };
 
             var ajaxConfig = {
                 method: "PUT",
-                url: SERVER_URL + "/api/v1/items/" + $("#textItemCord").val(),
+                url: SERVER_URL + "/api/v1/items/" + $("#textPaymentID").val(),
                 async: true,
                 contentType: "application/json",
-                data: JSON.stringify(item)
+                data: JSON.stringify(payment)
             }
 
             $.ajax(ajaxConfig).done(function(response,statusText,jxhr){

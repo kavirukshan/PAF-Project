@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.View;
 
 @Controller
-public class HomeController {
+public class PaymentController {
 
     @RequestMapping(value = "/payment")
     public String payment(){
