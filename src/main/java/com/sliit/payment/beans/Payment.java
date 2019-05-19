@@ -2,7 +2,7 @@ package com.sliit.payment.beans;
 
 public class Payment {
     private Integer id;
-    private String description;
+    private String item_id;
     private Double unitPrice;
     private Integer qtyOnHand;
 
@@ -14,12 +14,12 @@ public class Payment {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getItem_id() {
+        return item_id;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setItem_id(String description) {
+        this.item_id = item_id;
     }
 
     public Double getUnitPrice() {

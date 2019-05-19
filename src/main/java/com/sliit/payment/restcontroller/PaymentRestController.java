@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -45,22 +46,6 @@ public class PaymentRestController {
         return ResponseEntity.ok(paymentService.findAll());
     }
 
-//    @RequestMapping(value = "/api/v1/payment/{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON)
-//    public Payment getById(@PathVariable("id") Integer id){
-//        Payment payment = new Payment();
-//        payment.setId(10);
-//        return payment;
-//    }
-//
-//    @RequestMapping(value = "/api/v1/payment/(id)",method = RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON)
-//    public String updatePayment(@RequestBody Payment payment,@PathVariable("id") String id){
-//        //Update code
-//        return "success";
-//    }
-//
-//    @RequestMapping(value = "/api/v1/payment/{id}",method = RequestMethod.DELETE)
-//    public String deletePayment(@PathVariable("id") Integer id){
-//        //delete Code
-//        return "success";
-//    }
+
+
 }

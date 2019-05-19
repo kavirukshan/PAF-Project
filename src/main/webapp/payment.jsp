@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Point Of Sales | Dashboard</title>
+    <title>Payments | eBuy </title>
 
     <!-- Google Font -->
     <link rel="stylesheet"
@@ -19,11 +19,11 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">WebSiteName</a>
+                    <a class="navbar-brand" href="#">eBuy</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
+                    <li><a href="http://localhost:8080/payment.jsp">Payment</a></li>
                     <li><a href="#">Page 2</a></li>
                     <li><a href="#">Page 3</a></li>
                 </ul>
@@ -64,12 +64,12 @@
                                             <div class="form-group">
                                                 <label>Payment ID</label>
                                                 <input type="text" class="form-control" id="id"
-                                                       placeholder="Enter Payment ID" disabled>
+                                                       placeholder="Payment ID" disabled>
                                             </div>
                                             <div class="form-group">
-                                                <label>Description</label>
-                                                <input type="text" class="form-control" id="description"
-                                                       placeholder="Enter Description">
+                                                <label>Item ID</label>
+                                                <input type="text" class="form-control" id="item_id"
+                                                       placeholder="Enter Payment ID">
                                             </div>
                                             <div class="form-group">
                                                 <label>Unit Price</label>
@@ -101,7 +101,7 @@
                                             <thead>
                                             <tr>
                                                 <th>Payment ID</th>
-                                                <th>Description</th>
+                                                <th>Item ID</th>
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Remove</th>
@@ -153,7 +153,7 @@
         $("#btnSave").click(function () {
             var item = {
                 id: $("#id").val(),
-                description: $("#description").val(),
+                item_id: $("#item_id").val(),
                 unitPrice: $("#unitPrice").val(),
                 qtyOnHand: $("#qtyOnHand").val()
             };
@@ -165,7 +165,7 @@
                 data: JSON.stringify(item)
             };
             $.ajax(ajaxConfig).done(function (response, statusText, jxhr) {
-                alert("Updated Successfully");
+                alert("Insert Successfully");
                 loadAllPayment();
                 $("#payment-form").reset();
             }).fail(function (jxhr, statusText, error) {
@@ -177,7 +177,7 @@
         $(document).on("click",".btn-warning",function () {
             var row = $(this).closest('tr').data('payment');
             $("#id").val(row.id);
-            $("#description").val(row.description);
+            $("#item_id").val(row.item_id);
             $("#unitPrice").val(row.unitPrice);
             $("#qtyOnHand").val(row.qtyOnHand);
         });
@@ -203,7 +203,7 @@
                 table.empty();
                 $.each(data,function (key, row) {
                     var tblrow = $('<tr><td>'+row.id+'</td>' +
-                        '<td>'+row.description+'</td>' +
+                        '<td>'+row.item_id+'</td>' +
                         '<td>'+row.unitPrice+'</td>' +
                         '<td>'+row.qtyOnHand+'</td>' +
                         '<td class="text-center"><button class="btn btn-warning btn-sm">EDIT</button>'+
@@ -218,95 +218,6 @@
     });
 
 
-    <%--function loadAllPayment(){--%>
-
-    <%--$("#tblItems").dataTable().fnDestroy();--%>
-    <%--$("#tblItems tbody tr").remove();--%>
-
-    <%--var ajaxConfig = {--%>
-        <%--method: "GET",--%>
-        <%--url: SERVER_URL + "/api/v1/items",--%>
-        <%--async: true--%>
-    <%--};--%>
-
-    <%--$.ajax(ajaxConfig).done(function (items, statusText, jxhr) {--%>
-
-        <%--items.forEach(function (item) {--%>
-<%--//textItemQty textItemPrice textItemName textItemCord--%>
-            <%--var html = `<tr>--%>
-                                <%--<td>${item.code}</td>--%>
-                                <%--<td>${item.description}</td>--%>
-                                <%--<td>${item.unitPrice}</td>--%>
-                                <%--<td>${item.qtyOnHand}</td>--%>
-                                <%--<td><button type="button" class="btn btn-success delete">Delete</button></td>--%>
-                            <%--</tr>`;--%>
-
-            <%--$("#tblItems tbody").append(html);--%>
-
-            <%--$("#tblItems tbody tr").off("click");--%>
-            <%--$("#tblItems tbody tr").click(function () {--%>
-                <%--$("#tblItems tbody tr").removeClass("selected-row");--%>
-                <%--$(this).addClass("selected-row");--%>
-
-                <%--$("#textItemCord").val($(this).find("td:first-child").text());--%>
-                <%--$("#textItemCord").attr("disabled", true);--%>
-                <%--$("#textItemName").val($(this).find("td:nth-child(2)").text());--%>
-                <%--$("#textItemPrice").val($(this).find("td:nth-child(3)").text());--%>
-                <%--$("#textItemQty").val($(this).find("td:nth-child(4)").text());--%>
-
-            <%--});--%>
-
-            <%--$("button.delete").off("click");--%>
-            <%--$("button.delete").click(function (eventData) {--%>
-
-                <%--eventData.stopPropagation();--%>
-
-                <%--var row = $(this).parents("tr");--%>
-                <%--var customerId = (row.find("td:first-child").text());--%>
-
-                <%--if (confirm("Are you sure to delete this Item?")) {--%>
-
-                    <%--var ajaxConfig = {--%>
-                        <%--method: "DELETE",--%>
-                        <%--url: SERVER_URL + "/api/v1/items/" + customerId,--%>
-                        <%--async: true--%>
-                    <%--}--%>
-
-                    <%--$.ajax(ajaxConfig).done(function (response, statusText, jxhr) {--%>
-
-                        <%--$(row).remove();--%>
-
-                    <%--}).fail(function (jxhr, statusText, error) {--%>
-
-                        <%--console.log(jxhr.responseText);--%>
-
-                    <%--});--%>
-
-                <%--}--%>
-            <%--});--%>
-
-        <%--});--%>
-
-        <%--$('#tblItems').DataTable({--%>
-            <%--'paging': true,--%>
-            <%--'lengthChange': false,--%>
-            <%--'searching': true,--%>
-            <%--'ordering': true,--%>
-            <%--'info': true,--%>
-            <%--'autoWidth': true,--%>
-            <%--'pageLength': 5,--%>
-            <%--language: {--%>
-                <%--search: "_INPUT_",--%>
-                <%--searchPlaceholder: "Search Items..."--%>
-            <%--}--%>
-        <%--});--%>
-
-    <%--}).fail(function (jxhr, statusText, error) {--%>
-        <%--console.log(error);--%>
-    <%--});--%>
-
-
-    <%--}--%>
 </script>
 </body>
 </html>

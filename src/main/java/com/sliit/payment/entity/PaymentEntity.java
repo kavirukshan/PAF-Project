@@ -14,7 +14,7 @@ public class PaymentEntity  {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        private String description;
+        private String item_id;
 
         private Double unitPrice;
 
